@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="canvas">
+    <main class="canvas">
       <div class="container">
         <div class="card">
           <div class="card-image painting"></div>
@@ -61,6 +61,14 @@
           </div>
         </div> -->
       </div>
-    </div>
+    </main>
+    <script src="vanilla-tilt.min.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        glare: true,
+        reverse: true,
+        "max-glare": 0.2,
+      });
+    </script>
   </body>
 </html>

@@ -51,11 +51,6 @@ html {
   font-size: 12px;
 }
 
-.card:hover {
-  transform: scale(1.2);
-  box-shadow: 3px 3px 10px rgba(216, 194, 30, .8);
-}
-
 .card-image {
   grid-area: image;
   background-size: cover;
@@ -63,7 +58,8 @@ html {
   background-repeat: no-repeat;
   border-top-left-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
-  width: 100%;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .card-image.painting {
@@ -91,12 +87,17 @@ html {
 }
 
 .card-description {
-  color: var(--yangColor);
   grid-area: text;
+  color: var(--yangColor);
   margin: 25px;
+  transform: translateZ(30px);
 }
 
 .card-title {
   font-size: 2em;
   margin-bottom: 15px;
+}
+
+.js-tilt-glare {
+  border-radius: var(--borderRadius); 
 }
