@@ -1,8 +1,10 @@
 :root {
   --yangColor: rgb(216, 194, 30);
+  --rColor:	#ff0000;
+  --gColor:	#008000;
+  --bColor: #0000ff;
   --yinColor: #111111;
   --borderRadius: 20px;
-  --animation: .5s ease;
 }
 
 html {
@@ -39,16 +41,47 @@ html {
 }
 
 .card {
+  position: relative;
   display: grid;
   grid-template-columns: 300px;
-  grid-template-rows: 210px 230px;
+  grid-template-rows: 210px 240px;
   grid-template-areas: "image" "text";
   border-radius: var(--borderRadius);
-  box-shadow: 3px 3px 10px rgba(216, 194, 30, .5);
-  border: 1px solid var(--yangColor);
+  background: var(--yinColor);
   text-align: center;
-  transition: var(--animation);
   font-size: 12px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.rgb::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(45deg,
+    #ff0000 0%,
+    #ff9a00 10%,
+    #d0de21 20%,
+    #4fdc4a 30%,
+    #3fdad8 40%,
+    #2fc9e2 50%,
+    #1c7fee 60%,
+    #5f15f2 70%,
+    #ba0cf8 80%,
+    #fb07d9 90%,
+    #ff0000 100%
+  ) repeat 0% 0% / 300% 100%;
+  inset: -3px;
+  animation: rgb 6s linear infinite;
+  border-radius: var(--borderRadius);
+  filter: blur(8px);
+  z-index: -1;
+  transform: translateZ(-1px);
+}
+
+@keyframes rgb {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .card-image {
@@ -58,31 +91,41 @@ html {
   background-repeat: no-repeat;
   border-top-left-radius: var(--borderRadius);
   border-top-right-radius: var(--borderRadius);
-  transform-style: preserve-3d;
-  perspective: 1000px;
 }
 
-.card-image.painting {
+.painting .card-image {
   background-image: url("images/art.jpg");
 }
 
-.card-image.penspinning {
-  background-image: url("images/penspinning.jpg");
+.painting .card-title {
+  color: var(--rColor);
 }
 
-.card-image.code {
+.code .card-image {
   background-image: url("images/code.jpg");
 }
 
-.card-image.music {
+.code .card-title {
+  color: var(--gColor);
+}
+
+.music .card-image {
   background-image: url("images/ian-anderson.jpg");
 }
 
-.card-image.maths {
+.music .card-title {
+  color: var(--bColor);
+}
+
+.maths .card-image {
   background-image: url("images/math.jpg");
 }
 
-.card-image.speedcubing {
+.penspinning .card-image {
+  background-image: url("images/penspinning.jpg");
+}
+
+.speedcubing .card-image {
   background-image: url("images/speedcubing.jpg");
 }
 
@@ -97,6 +140,8 @@ html {
   font-size: 2em;
   margin-bottom: 15px;
 }
+
+.card-title
 
 .js-tilt-glare {
   border-radius: var(--borderRadius); 
