@@ -71,11 +71,23 @@ html {
     #ff0000 100%
   ) repeat 0% 0% / 300% 100%;
   inset: -3px;
-  animation: rgb 6s linear infinite;
+  animation: rgb 8s linear infinite;
   border-radius: var(--borderRadius);
   filter: blur(8px);
   z-index: -1;
   transform: translateZ(-1px);
+}
+
+.rgb:nth-child(2)::after {
+  animation-delay: 2s;
+}
+
+.rgb:nth-child(3)::after {
+  animation-delay: 4s;
+}
+
+.rgb:nth-child(4)::after {
+  animation-delay: 6s;
 }
 
 @keyframes rgb {

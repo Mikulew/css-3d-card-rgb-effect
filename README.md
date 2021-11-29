@@ -15,7 +15,7 @@ The main purpose of **the RGB color model** is for the sensing, representation, 
 ## Technologies
 
 * HTML5
-* CSS3
+* CSS3 (RWD)
 * JavaScript (ES6+, Vanilla Tilt)
 
 ## Demo
