@@ -1,7 +1,7 @@
 :root {
   --yangColor: rgb(216, 194, 30);
-  --rColor:	#ff0000;
-  --gColor:	#008000;
+  --rColor: #ff0000;
+  --gColor: #008000;
   --bColor: #0000ff;
   --yinColor: #111111;
   --borderRadius: 20px;
@@ -15,7 +15,9 @@ html {
   height: 100%;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   font-size: inherit;
   font-family: inherit;
   box-sizing: inherit;
@@ -45,7 +47,7 @@ html {
   display: grid;
   grid-template-columns: 300px;
   grid-template-rows: 210px 240px;
-  grid-template-areas: "image" "text";
+  grid-template-areas: 'image' 'text';
   border-radius: var(--borderRadius);
   background: var(--yinColor);
   text-align: center;
@@ -56,20 +58,22 @@ html {
 
 .rgb::after {
   position: absolute;
-  content: "";
-  background: linear-gradient(45deg,
-    #ff0000 0%,
-    #ff9a00 10%,
-    #d0de21 20%,
-    #4fdc4a 30%,
-    #3fdad8 40%,
-    #2fc9e2 50%,
-    #1c7fee 60%,
-    #5f15f2 70%,
-    #ba0cf8 80%,
-    #fb07d9 90%,
-    #ff0000 100%
-  ) repeat 0% 0% / 300% 100%;
+  content: '';
+  background: linear-gradient(
+      45deg,
+      #ff0000 0%,
+      #ff9a00 10%,
+      #d0de21 20%,
+      #4fdc4a 30%,
+      #3fdad8 40%,
+      #2fc9e2 50%,
+      #1c7fee 60%,
+      #5f15f2 70%,
+      #ba0cf8 80%,
+      #fb07d9 90%,
+      #ff0000 100%
+    )
+    repeat 0% 0% / 300% 100%;
   inset: -3px;
   animation: rgb 8s linear infinite;
   border-radius: var(--borderRadius);
@@ -91,9 +95,15 @@ html {
 }
 
 @keyframes rgb {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .card-image {
@@ -106,7 +116,7 @@ html {
 }
 
 .painting .card-image {
-  background-image: url("images/art.jpg");
+  background-image: url('images/art.jpg');
 }
 
 .painting .card-title {
@@ -114,7 +124,7 @@ html {
 }
 
 .code .card-image {
-  background-image: url("images/code.jpg");
+  background-image: url('images/code.jpg');
 }
 
 .code .card-title {
@@ -122,7 +132,7 @@ html {
 }
 
 .music .card-image {
-  background-image: url("images/ian-anderson.jpg");
+  background-image: url('images/ian-anderson.jpg');
 }
 
 .music .card-title {
@@ -130,15 +140,15 @@ html {
 }
 
 .maths .card-image {
-  background-image: url("images/math.jpg");
+  background-image: url('images/math.jpg');
 }
 
 .penspinning .card-image {
-  background-image: url("images/penspinning.jpg");
+  background-image: url('images/penspinning.jpg');
 }
 
 .speedcubing .card-image {
-  background-image: url("images/speedcubing.jpg");
+  background-image: url('images/speedcubing.jpg');
 }
 
 .card-description {
@@ -154,7 +164,7 @@ html {
 }
 
 .js-tilt-glare {
-  border-radius: var(--borderRadius); 
+  border-radius: var(--borderRadius);
 }
 
 @media (max-width: 1200px) {
